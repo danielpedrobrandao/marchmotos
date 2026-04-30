@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marchi Motos | Motos Honda e Yamaha 0km | São José - SC</title>
+<meta name="description" content="Marchi Motos - Especializada em motos zero km Honda e Yamaha em São José/SC. Financiamento em até 48x, entrada facilitada, troca. Nota 5.0 no Google!">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:    #0057FF;
+  --blue2:   #003FBB;
+  --blue3:   #002A8A;
+  --cyan:    #00C6FF;
+  --cyan2:   #00E5FF;
+  --dark:    #04080F;
+  --dark2:   #080E1A;
+  --dark3:   #0C1526;
+  --gray:    #131D2E;
+  --gray2:   #1C2A40;
+  --light:   #E8F0FF;
+  --white:   #FFFFFF;
+  --muted:   #5A7099;
+  --gold:    #FFD700;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--light);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--dark2); }
+::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 4px; }
+
+/* ─── GRID BACKGROUND ─── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image:
+    linear-gradient(rgba(0,87,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,87,255,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ─── NAVBAR ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  height: 76px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 64px;
+  background: rgba(4,8,15,0.85);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0,87,255,0.15);
+  transition: all 0.3s;
+}
+nav.scrolled {
+  height: 62px;
+  background: rgba(4,8,15,0.97);
+  border-bottom-color: rgba(0,87,255,0.35);
+}
+
+/* ─── LOGO ANIMATION ─── */
+.nav-logo { display: flex; align-items: center; gap: 14px; }
+.logo-img-wrap {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.logo-img-wrap img {
+  height: 50px;
+  object-fit: contain;
+  position: relative; z-index: 2;
+  animation: logoFloat 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(0,198,255,0.6));
+}
+.logo-ring {
+  position: absolute;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,198,255,0.4);
+  animation: ringPulse 2.5s ease-in-out infinite;
+}
+.logo-ring2 {
+  position: absolute;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,87,255,0.2);
+  animation: ringPulse 2.5s 0.5s ease-in-out infinite;
+}
+@keyframes logoFloat {
+  0%,100%{ transform: translateY(0) scale(1); filter: drop-shadow(0 0 10px rgba(0,198,255,0.6)); }
+  50%{ transform: translateY(-4px) scale(1.03); filter: drop-shadow(0 0 18px rgba(0,229,255,0.9)); }
+}
+@keyframes ringPulse {
+  0%,100%{ opacity: 0.6; transform: scale(1); }
+  50%{ opacity: 0.2; transform: scale(1.15); }
+}
+
+.nav-brand {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--white);
+  line-height: 1;
+}
+.nav-brand span { color: var(--cyan); }
+
+.nav-links { display: flex; gap: 36px; }
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--cyan); }
+.nav-links a:hover::after { width: 100%; }
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: var(--white) !important;
+  padding: 10px 26px;
+  border-radius: 4px;
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 13px !important; font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  box-shadow: 0 4px 20px rgba(0,87,255,0.4);
+  transition: all 0.25s !important;
+}
+.nav-cta:hover { box-shadow: 0 6px 30px rgba(0,87,255,0.6) !important; transform: translateY(-1px); }
+.nav-cta::after { display: none !important; }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.hamburger span { width: 26px; height: 2px; background: var(--light); border-radius: 2px; transition: all 0.3s; }
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex; align-items: center;
+  padding-top: 76px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://i.postimg.cc/wBq2LgNT/Captura-de-tela-2026-04-29-210548.jpg') center/cover no-repeat;
+  filter: brightness(0.18) saturate(0.5);
+  transform: scale(1.06);
+  animation: heroPan 14s ease-in-out infinite alternate;
+}
+@keyframes heroPan {
+  from { transform: scale(1.06) translateX(0); }
+  to   { transform: scale(1.1) translateX(-20px); }
+}
+
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(4,8,15,0.3) 0%, rgba(4,8,15,0.6) 100%),
+    linear-gradient(90deg, rgba(4,8,15,0.8) 0%, transparent 70%);
+}
+
+/* scan line effect */
+.hero-scan {
+  position: absolute; inset: 0; z-index: 1;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent,
+    transparent 2px,
+    rgba(0,87,255,0.015) 2px,
+    rgba(0,87,255,0.015) 4px
+  );
+  pointer-events: none;
+}
+
+/* animated top border */
+.hero-border-top {
+  position: absolute; top: 76px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--blue), var(--cyan), var(--blue), transparent);
+  animation: borderSlide 3s linear infinite;
+  background-size: 200% 100%;
+}
+@keyframes borderSlide {
+  0%{ background-position: -100% 0; }
+  100%{ background-position: 200% 0; }
+}
+
+.hero-content {
+  position: relative; z-index: 2;
+  max-width: 1400px; margin: 0 auto;
+  padding: 0 64px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s ease both;
+}
+.eyebrow-dot {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 8px var(--cyan);
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.6)} }
+.eyebrow-line {
+  width: 40px; height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
+.eyebrow-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.hero-logo-big {
+  display: block;
+  height: 90px; width: auto;
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s 0.05s ease both, heroLogoPulse 4s 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(0,198,255,0.7)) drop-shadow(0 0 50px rgba(0,87,255,0.4));
+}
+@keyframes heroLogoPulse {
+  0%,100%{ filter: drop-shadow(0 0 20px rgba(0,198,255,0.7)) drop-shadow(0 0 50px rgba(0,87,255,0.4)); }
+  50%{ filter: drop-shadow(0 0 35px rgba(0,229,255,1)) drop-shadow(0 0 80px rgba(0,87,255,0.6)); }
+}
+
+.hero-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(52px, 9vw, 120px);
+  font-weight: 900;
+  line-height: 0.9;
+  color: var(--white);
+  letter-spacing: -1px;
+  animation: fadeUp 0.7s 0.1s ease both;
+}
+.hero-title .accent {
+  display: block;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 1.8vw, 20px);
+  font-weight: 300;
+  color: rgba(232,240,255,0.65);
+  margin: 28px 0 44px;
+  max-width: 580px;
+  line-height: 1.7;
+  animation: fadeUp 0.7s 0.2s ease both;
+}
+
+.hero-btns {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp 0.7s 0.3s ease both;
+}
+
+.btn-blue {
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: var(--white);
+  padding: 16px 44px;
+  border: none; border-radius: 4px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 10px;
+  box-shadow: 0 6px 28px rgba(0,87,255,0.45), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.btn-blue:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,87,255,0.6); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--light);
+  padding: 15px 36px;
+  border: 1px solid rgba(0,198,255,0.35);
+  border-radius: 4px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  transition: all 0.25s;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-3px); }
+
+.hero-right {
+  position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+  z-index: 2;
+  display: flex; flex-direction: column; gap: 24px;
+  animation: fadeLeft 0.8s 0.5s ease both;
+}
+.hero-stat-card {
+  background: rgba(8,14,26,0.8);
+  border: 1px solid rgba(0,87,255,0.25);
+  border-radius: 8px;
+  padding: 18px 26px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+.hero-stat-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+.stat-val {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 36px; font-weight: 900;
+  color: var(--white); line-height: 1;
+}
+.stat-val span { color: var(--cyan); }
+.stat-lbl {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--muted); margin-top: 5px; display: block;
+}
+
+/* ─── TICKER ─── */
+.ticker-wrap {
+  background: linear-gradient(90deg, var(--blue3), var(--blue), var(--blue3));
+  height: 46px; overflow: hidden;
+  display: flex; align-items: center;
+  position: relative; z-index: 2;
+}
+.ticker-wrap::before, .ticker-wrap::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 80px; z-index: 2;
+}
+.ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--blue3), transparent); }
+.ticker-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--blue3), transparent); }
+.ticker-track {
+  display: flex; white-space: nowrap;
+  animation: ticker 30s linear infinite;
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 20px;
+  padding: 0 20px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+}
+.ticker-item::before { content: '◆'; font-size: 7px; opacity: 0.6; }
+@keyframes ticker { from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
+
+/* ─── SECTIONS ─── */
+.section { max-width: 1400px; margin: 0 auto; padding: 100px 64px; position: relative; z-index: 1; }
+.s-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px;
+}
+.s-label::before { content: ''; width: 20px; height: 1px; background: var(--cyan); }
+.s-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(34px, 4.5vw, 58px);
+  font-weight: 900; line-height: 1;
+  color: var(--white); margin-bottom: 60px;
+}
+.s-title em { font-style: normal; color: var(--cyan); }
+
+/* ─── DIFERENCIAIS ─── */
+#diferenciais { background: var(--dark2); }
+.dif-inner { max-width: 1400px; margin: 0 auto; padding: 100px 64px; }
+.dif-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(0,87,255,0.1);
+  border: 1px solid rgba(0,87,255,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.dif-card {
+  background: var(--dark3);
+  padding: 44px 32px;
+  position: relative;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+.dif-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 0;
+  background: linear-gradient(180deg, rgba(0,87,255,0.12), transparent);
+  transition: height 0.4s;
+}
+.dif-card:hover::after { height: 100%; }
+.dif-card:hover { background: #0e1828; }
+
+.dif-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 48px; font-weight: 900;
+  color: rgba(0,87,255,0.12);
+  line-height: 1;
+  margin-bottom: 16px;
+  transition: color 0.3s;
+}
+.dif-card:hover .dif-num { color: rgba(0,198,255,0.2); }
+.dif-icon {
+  width: 48px; height: 48px;
+  background: rgba(0,87,255,0.12);
+  border: 1px solid rgba(0,87,255,0.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+.dif-card:hover .dif-icon { background: rgba(0,87,255,0.25); border-color: var(--cyan); }
+.dif-icon svg { width: 22px; height: 22px; color: var(--cyan); }
+.dif-card h3 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--white); margin-bottom: 10px;
+}
+.dif-card p { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+/* ─── ESTOQUE ─── */
+#estoque { background: var(--dark); }
+.estoque-inner { max-width: 1400px; margin: 0 auto; padding: 100px 64px; }
+
+.cat-filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 50px; }
+.cat-btn {
+  padding: 9px 22px;
+  border-radius: 4px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid rgba(0,87,255,0.2);
+  color: var(--muted); background: transparent;
+  transition: all 0.2s;
+}
+.cat-btn.active, .cat-btn:hover {
+  border-color: var(--blue);
+  color: var(--cyan);
+  background: rgba(0,87,255,0.1);
+  box-shadow: 0 0 12px rgba(0,87,255,0.2);
+}
+
+.estoque-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.moto-card {
+  background: var(--dark3);
+  border: 1px solid rgba(0,87,255,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.35s;
+  position: relative;
+}
+.moto-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  transform: scaleX(0);
+  transition: transform 0.35s;
+  z-index: 2;
+}
+.moto-card:hover {
+  border-color: rgba(0,87,255,0.35);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,87,255,0.12);
+}
+.moto-card:hover::before { transform: scaleX(1); }
+
+.card-img {
+  position: relative; height: 220px;
+  background: var(--gray);
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+  filter: saturate(0.85);
+}
+.moto-card:hover .card-img img { transform: scale(1.08); filter: saturate(1.1); }
+
+.card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(4,8,15,0.7) 100%);
+}
+
+.card-tag {
+  position: absolute; top: 14px; left: 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 4px 12px; border-radius: 3px;
+  color: var(--white);
+}
+.tag-new { background: var(--blue); }
+.tag-hot { background: #FF4500; }
+.tag-used { background: var(--gray2); }
+.tag-promo { background: #FF8800; }
+.tag-zero { background: #008000; }
+
+.card-body { padding: 22px; }
+.card-marca {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--cyan); margin-bottom: 5px;
+}
+.card-model {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 22px; font-weight: 700;
+  color: var(--white); text-transform: uppercase;
+  letter-spacing: 1px; line-height: 1.1;
+  margin-bottom: 14px;
+}
+.card-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.spec {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 3px 10px; border-radius: 3px;
+}
+.card-price {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px; font-weight: 700;
+  color: var(--white); line-height: 1;
+  margin-bottom: 18px;
+}
+.card-price .old { font-size: 16px; color: var(--muted); text-decoration: line-through; display: block; margin-bottom: 4px; font-family: 'Outfit', sans-serif; font-weight: 400; }
+
+.card-actions { display: flex; gap: 10px; }
+.c-btn {
+  flex: 1; padding: 12px;
+  text-align: center;
+  border-radius: 4px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  text-decoration: none; cursor: pointer;
+  border: none; transition: all 0.2s;
+}
+.c-primary { background: linear-gradient(135deg, var(--blue), var(--blue2)); color: var(--white); box-shadow: 0 4px 16px rgba(0,87,255,0.3); }
+.c-primary:hover { box-shadow: 0 6px 24px rgba(0,87,255,0.5); transform: translateY(-1px); }
+.c-outline { background: transparent; color: var(--light); border: 1px solid rgba(0,87,255,0.3) !important; }
+.c-outline:hover { border-color: var(--cyan) !important; color: var(--cyan); }
+
+/* ─── MARCAS ─── */
+.marcas-section { background: var(--dark2); padding: 60px 0; }
+.marcas-inner { max-width: 1400px; margin: 0 auto; padding: 0 64px; }
+.marcas-title { text-align: center; margin-bottom: 40px; }
+.marcas-title p {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 5px; text-transform: uppercase;
+  color: var(--muted);
+}
+.marcas-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.marca-card {
+  background: var(--dark3);
+  border: 1px solid rgba(0,87,255,0.12);
+  border-radius: 8px;
+  padding: 36px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: default;
+}
+.marca-card:hover {
+  border-color: rgba(0,87,255,0.4);
+  box-shadow: 0 8px 30px rgba(0,87,255,0.15);
+  transform: translateY(-4px);
+}
+.marca-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 32px; font-weight: 900;
+  color: var(--white);
+  letter-spacing: 4px;
+}
+.marca-card:first-child .marca-name { color: #CC0000; text-shadow: 0 0 20px rgba(204,0,0,0.4); }
+.marca-card:last-child .marca-name { color: #003DB5; text-shadow: 0 0 20px rgba(0,61,181,0.4); }
+.marca-sub { font-size: 12px; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; margin-top: 6px; }
+.marca-desc { font-size: 14px; color: rgba(232,240,255,0.5); margin-top: 14px; line-height: 1.6; }
+
+/* ─── CLIENTES ─── */
+#clientes { background: var(--dark3); }
+.clientes-inner { max-width: 1400px; margin: 0 auto; padding: 100px 64px; }
+
+.slider-wrap { position: relative; overflow: hidden; margin-bottom: 20px; }
+.slider-track {
+  display: flex; gap: 16px;
+  animation: slideClientes 28s linear infinite;
+  width: max-content;
+}
+.slider-track:hover { animation-play-state: paused; }
+@keyframes slideClientes {
+  0%{ transform: translateX(0); }
+  100%{ transform: translateX(-50%); }
+}
+
+.cliente-card {
+  width: 260px; flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0,87,255,0.15);
+  transition: border-color 0.3s;
+}
+.cliente-card:hover { border-color: rgba(0,198,255,0.4); }
+.cliente-card img {
+  width: 100%; height: 200px;
+  object-fit: cover;
+  filter: saturate(0.8);
+  transition: filter 0.3s, transform 0.4s;
+}
+.cliente-card:hover img { filter: saturate(1.1); transform: scale(1.04); }
+.cliente-overlay {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(4,8,15,0.85));
+  padding: 20px 14px 14px;
+  text-align: center;
+}
+.cliente-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--cyan);
+}
+
+/* ─── AVALIAÇÕES ─── */
+#avaliacoes { background: var(--dark2); }
+.aval-inner { max-width: 1400px; margin: 0 auto; padding: 100px 64px; }
+.aval-top { display: flex; align-items: center; gap: 60px; margin-bottom: 60px; flex-wrap: wrap; }
+
+.aval-score {
+  text-align: center;
+  background: var(--dark3);
+  border: 1px solid rgba(0,87,255,0.15);
+  border-radius: 12px;
+  padding: 40px 50px;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.aval-score::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+}
+.score-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 72px; font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--gold), #FFA000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.score-stars { display: flex; justify-content: center; gap: 4px; margin: 8px 0; }
+.score-stars svg { width: 20px; height: 20px; color: var(--gold); }
+.score-count { font-size: 13px; color: var(--muted); letter-spacing: 1px; }
+
+.aval-info { flex: 1; }
+.aval-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--white); margin-bottom: 16px;
+}
+.aval-info h2 em { font-style: normal; color: var(--cyan); }
+.aval-info p { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 500px; }
+
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.review-card {
+  background: var(--dark3);
+  border: 1px solid rgba(0,87,255,0.1);
+  border-radius: 8px;
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+}
+.review-card::before {
+  content: '"';
+  position: absolute; top: -10px; left: 20px;
+  font-size: 80px;
+  font-family: Georgia, serif;
+  color: rgba(0,87,255,0.15);
+  line-height: 1;
+}
+.review-card:hover { border-color: rgba(0,87,255,0.3); transform: translateY(-4px); }
+.rev-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+.rev-stars svg { width: 16px; height: 16px; color: var(--gold); }
+.rev-text { font-size: 14px; color: rgba(232,240,255,0.7); line-height: 1.7; font-style: italic; margin-bottom: 16px; }
+.rev-author { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--cyan); }
+.rev-date { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+/* ─── LOJA ─── */
+.loja-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+.loja-img-side {
+  position: relative; overflow: hidden;
+}
+.loja-img-side img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(0.75);
+  transition: all 0.5s;
+}
+.loja-img-side:hover img { filter: saturate(1); }
+.loja-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 60%, rgba(4,8,15,0.8) 100%);
+}
+/* corner accents */
+.loja-img-side::before, .loja-img-side::after {
+  content: '';
+  position: absolute; width: 30px; height: 30px; z-index: 3;
+}
+.loja-img-side::before { top: 20px; left: 20px; border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan); }
+.loja-img-side::after  { bottom: 20px; right: 20px; border-bottom: 2px solid var(--cyan); border-right: 2px solid var(--cyan); }
+
+.loja-content-side {
+  background: var(--dark2);
+  padding: 80px 64px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.loja-content-side h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 900; line-height: 1;
+  color: var(--white); margin-bottom: 24px;
+}
+.loja-content-side h2 em { font-style: normal; color: var(--cyan); }
+.loja-content-side > p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 36px; max-width: 460px; }
+
+.loja-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+.loja-item { display: flex; align-items: center; gap: 14px; }
+.loja-item-icon {
+  width: 36px; height: 36px; flex-shrink: 0;
+  background: rgba(0,87,255,0.12);
+  border: 1px solid rgba(0,87,255,0.25);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+}
+.loja-item-icon svg { width: 16px; height: 16px; color: var(--cyan); }
+.loja-item span { font-size: 14px; color: rgba(232,240,255,0.7); }
+
+/* ─── CONTATO ─── */
+#contato { background: var(--dark); }
+.contato-inner {
+  max-width: 1400px; margin: 0 auto; padding: 100px 64px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+.contato-info .s-title { margin-bottom: 16px; }
+.contato-info > p { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 44px; }
+.contact-list { display: flex; flex-direction: column; gap: 22px; }
+.contact-row { display: flex; gap: 18px; align-items: flex-start; }
+.contact-icon {
+  width: 44px; height: 44px; flex-shrink: 0;
+  background: rgba(0,87,255,0.1);
+  border: 1px solid rgba(0,87,255,0.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.contact-row:hover .contact-icon { background: rgba(0,87,255,0.2); border-color: var(--cyan); }
+.contact-icon svg { width: 18px; height: 18px; color: var(--cyan); }
+.contact-text h4 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 4px;
+}
+.contact-text p, .contact-text a {
+  font-size: 15px; color: var(--light);
+  text-decoration: none; line-height: 1.5;
+  transition: color 0.2s;
+}
+.contact-text a:hover { color: var(--cyan); }
+
+.contato-form {
+  background: var(--dark3);
+  border: 1px solid rgba(0,87,255,0.15);
+  border-radius: 10px;
+  padding: 48px;
+  position: relative; overflow: hidden;
+}
+.contato-form::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan), var(--blue));
+  background-size: 200% 100%;
+  animation: borderSlide 3s linear infinite;
+}
+.contato-form h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px; font-weight: 700;
+  color: var(--white); margin-bottom: 8px;
+}
+.contato-form > p { font-size: 13px; color: var(--muted); margin-bottom: 30px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.f-group { margin-bottom: 18px; }
+.f-group label {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.f-group input, .f-group select, .f-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(0,87,255,0.15);
+  border-radius: 6px;
+  color: var(--light);
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+.f-group input:focus, .f-group select:focus, .f-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(0,87,255,0.1);
+}
+.f-group select option { background: var(--dark3); }
+
+.form-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--blue), var(--blue2));
+  color: var(--white);
+  border: none; border-radius: 6px;
+  padding: 16px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 8px;
+  box-shadow: 0 6px 24px rgba(0,87,255,0.35);
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,87,255,0.5); }
+.form-submit svg { width: 20px; height: 20px; }
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--dark2);
+  border-top: 1px solid rgba(0,87,255,0.1);
+  position: relative; z-index: 1;
+}
+.footer-top {
+  max-width: 1400px; margin: 0 auto;
+  padding: 70px 64px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+.f-brand { display: flex; flex-direction: column; gap: 16px; }
+.f-brand-logo { display: flex; align-items: center; gap: 12px; }
+.f-brand-logo img { height: 44px; filter: drop-shadow(0 0 6px rgba(0,198,255,0.5)); }
+.f-brand-name {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 20px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--white);
+}
+.f-brand-name span { color: var(--cyan); }
+.f-brand p { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 270px; }
+.f-col h4 {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 18px;
+}
+.f-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.f-col a { text-decoration: none; color: rgba(232,240,255,0.5); font-size: 14px; transition: color 0.2s; }
+.f-col a:hover { color: var(--cyan); }
+.footer-bottom {
+  border-top: 1px solid rgba(0,87,255,0.07);
+  padding: 24px 64px;
+  max-width: 1400px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-bottom p { font-size: 13px; color: var(--muted); }
+.f-socials { display: flex; gap: 12px; }
+.f-socials a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(0,87,255,0.15);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); text-decoration: none;
+  transition: all 0.2s;
+}
+.f-socials a:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0,87,255,0.1); }
+.f-socials a svg { width: 16px; height: 16px; }
+
+/* ─── WA FLOAT ─── */
+.wa-float {
+  position: fixed; right: 28px; bottom: 28px; z-index: 998;
+  width: 62px; height: 62px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
+  animation: waBounce 3.5s ease-in-out infinite;
+}
+.wa-float:hover { transform: scale(1.1); }
+.wa-float svg { width: 30px; height: 30px; color: white; }
+@keyframes waBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+.wa-tip {
+  position: absolute; right: 72px; top: 50%; transform: translateY(-50%);
+  background: var(--dark3); color: var(--white);
+  padding: 8px 14px; border-radius: 6px;
+  font-size: 13px; font-weight: 500;
+  white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s;
+  border: 1px solid rgba(0,87,255,0.2);
+}
+.wa-float:hover .wa-tip { opacity: 1; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp  { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:none} }
+@keyframes fadeLeft{ from{opacity:0;transform:translateX(32px)} to{opacity:1;transform:none} }
+.reveal { opacity:0; transform:translateY(36px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:none; }
+
+/* ─── MOBILE ─── */
+@media(max-width:1100px){
+  nav { padding: 0 28px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-content { padding: 0 28px; }
+  .hero-right { display: none; }
+  .section, .dif-inner, .estoque-inner, .aval-inner, .clientes-inner { padding: 70px 28px; }
+  .dif-grid { grid-template-columns: 1fr 1fr; }
+  .estoque-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .loja-section { grid-template-columns: 1fr; }
+  .loja-img-side { min-height: 320px; }
+  .loja-content-side { padding: 60px 36px; }
+  .contato-inner { grid-template-columns: 1fr; gap: 50px; padding: 70px 28px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; padding: 50px 28px; }
+  .footer-bottom { padding: 20px 28px; flex-direction: column; gap: 16px; text-align: center; }
+}
+@media(max-width:640px){
+  .dif-grid { grid-template-columns: 1fr; }
+  .estoque-grid { grid-template-columns: 1fr; }
+  .marcas-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 76px; left: 0; right: 0; z-index: 997;
+  background: rgba(4,8,15,0.98);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(0,87,255,0.15);
+  padding: 24px 28px;
+  flex-direction: column; gap: 18px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: var(--light); text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 18px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,87,255,0.1);
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-logo">
+    <div class="logo-img-wrap">
+      <div class="logo-ring"></div>
+      <div class="logo-ring2"></div>
+      <img src="https://i.postimg.cc/vBGvMX0c/Gemini-Generated-Image-fpb34afpb34afpb3-removebg-preview.png" alt="Marchi Motos Logo">
+    </div>
+    <div class="nav-brand">MARCHI <span>MOTOS</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#inicio">Início</a>
+    <a href="#estoque">Estoque</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#avaliacoes">Avaliações</a>
+    <a href="#contato">Contato</a>
+    <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Vim pelo site e gostaria de mais informações." class="nav-cta" target="_blank">Falar com Vendedor</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio" onclick="closeMenu()">Início</a>
+  <a href="#estoque" onclick="closeMenu()">Estoque</a>
+  <a href="#clientes" onclick="closeMenu()">Clientes</a>
+  <a href="#avaliacoes" onclick="closeMenu()">Avaliações</a>
+  <a href="#contato" onclick="closeMenu()">Contato</a>
+  <a href="https://api.whatsapp.com/send?phone=5548985068056" style="color:var(--cyan)" target="_blank">📲 WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-scan"></div>
+  <div class="hero-border-top"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-dot"></div>
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">São José · SC · Especialistas em 0km</span>
+    </div>
+
+    <img
+      src="https://i.postimg.cc/vBGvMX0c/Gemini-Generated-Image-fpb34afpb34afpb3-removebg-preview.png"
+      alt="Marchi Motos"
+      class="hero-logo-big"
+    >
+
+    <h1 class="hero-title">
+      MARCHI
+      <span class="accent">MOTOS</span>
+    </h1>
+
+    <p class="hero-sub">
+      Especialistas em Honda &amp; Yamaha zero km em São José/SC.<br>
+      Financiamento em até 48x · Entrada facilitada · Troca na hora.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#estoque" class="btn-blue">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17H7A5 5 0 017 7h2"/><path d="M15 7h2a5 5 0 010 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        Ver Estoque
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Quero uma moto 0km." class="btn-ghost" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2.5C6.529 2.5 2.5 6.529 2.5 11.5c0 1.727.476 3.344 1.303 4.727L2.5 21.5l5.369-1.278A8.966 8.966 0 0011.5 21.5c4.971 0 9-4.029 9-9s-4.029-9-9-9z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stat-card">
+      <div class="stat-val">5<span>.0</span></div>
+      <span class="stat-lbl">Google Rating</span>
+    </div>
+    <div class="hero-stat-card">
+      <div class="stat-val">181<span>+</span></div>
+      <span class="stat-lbl">Avaliações</span>
+    </div>
+    <div class="hero-stat-card">
+      <div class="stat-val">48<span>x</span></div>
+      <span class="stat-lbl">Financiamento</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="ticker-item">Honda 0KM</div>
+    <div class="ticker-item">Yamaha 0KM</div>
+    <div class="ticker-item">Financiamento 48x</div>
+    <div class="ticker-item">Entrada Facilitada</div>
+    <div class="ticker-item">Troca Aceita</div>
+    <div class="ticker-item">Parcelamento 18x Cartão</div>
+    <div class="ticker-item">Atendimento Online</div>
+    <div class="ticker-item">Nota 5.0 no Google</div>
+    <div class="ticker-item">181 Avaliações</div>
+    <!-- loop duplicate -->
+    <div class="ticker-item">Honda 0KM</div>
+    <div class="ticker-item">Yamaha 0KM</div>
+    <div class="ticker-item">Financiamento 48x</div>
+    <div class="ticker-item">Entrada Facilitada</div>
+    <div class="ticker-item">Troca Aceita</div>
+    <div class="ticker-item">Parcelamento 18x Cartão</div>
+    <div class="ticker-item">Atendimento Online</div>
+    <div class="ticker-item">Nota 5.0 no Google</div>
+    <div class="ticker-item">181 Avaliações</div>
+  </div>
+</div>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="dif-inner">
+    <p class="s-label reveal">Por que escolher</p>
+    <h2 class="s-title reveal">NOSSOS<br><em>DIFERENCIAIS</em></h2>
+    <div class="dif-grid">
+      <div class="dif-card reveal">
+        <div class="dif-num">01</div>
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <h3>Motos Zero KM</h3>
+        <p>Honda e Yamaha zero quilômetro com nota fiscal, garantia de fábrica e as melhores condições da região.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">02</div>
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Financia em 48x</h3>
+        <p>Parcelas que cabem no seu bolso com as melhores financeiras do mercado. Aprovação rápida e sem burocracia.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">03</div>
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l5.1 5.1"/><path d="M4 4l5 5"/></svg>
+        </div>
+        <h3>Aceita Troca</h3>
+        <p>Avaliamos sua moto na hora com preço justo e transparente. Sua usada entra como parte do pagamento.</p>
+      </div>
+      <div class="dif-card reveal">
+        <div class="dif-num">04</div>
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.09 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>90% Online</h3>
+        <p>Compre sua moto do conforto de casa. Todo o processo pode ser feito pelo WhatsApp, de forma rápida e segura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTOQUE -->
+<section id="estoque">
+  <div class="estoque-inner">
+    <p class="s-label reveal">Disponível agora</p>
+    <h2 class="s-title reveal">ESTOQUE<br><em>EM DESTAQUE</em></h2>
+
+    <div class="cat-filters reveal">
+      <button class="cat-btn active">Todos</button>
+      <button class="cat-btn">Honda</button>
+      <button class="cat-btn">Yamaha</button>
+      <button class="cat-btn">0 KM</button>
+      <button class="cat-btn">Seminovas</button>
+    </div>
+
+    <div class="estoque-grid">
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/9M3fsFYd/Captura-de-tela-2026-04-29-210809.jpg" alt="Moto 1">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-zero">0 KM</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Honda</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Zero KM</span>
+            <span class="spec">NF Incluída</span>
+            <span class="spec">Garantia</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/3RMwzJFj/Captura-de-tela-2026-04-29-210842.jpg" alt="Moto 2">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-new">Nova</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Honda</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">0 KM</span>
+            <span class="spec">48x</span>
+            <span class="spec">Entrada Facil</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/9M3fsFYp/Captura-de-tela-2026-04-29-210913.jpg" alt="Moto 3">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-zero">0 KM</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Yamaha</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Zero KM</span>
+            <span class="spec">Garantia</span>
+            <span class="spec">Financ.</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/Ss0KHNf7/Captura-de-tela-2026-04-29-210936.jpg" alt="Moto 4">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-hot">Oferta</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Honda</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Disponível</span>
+            <span class="spec">Aceita Troca</span>
+            <span class="spec">Financ.</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/rm6p7FNQ/Captura-de-tela-2026-04-29-211004.jpg" alt="Moto 5">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-zero">0 KM</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Yamaha</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Zero KM</span>
+            <span class="spec">NF</span>
+            <span class="spec">Garantia</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/V6yN2LWK/Captura-de-tela-2026-04-29-211036.jpg" alt="Moto 6">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-promo">Promoção</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Honda</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Disponível</span>
+            <span class="spec">Financ. 48x</span>
+            <span class="spec">Troca</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/3RMwzJFL/Captura-de-tela-2026-04-29-211112.jpg" alt="Moto 7">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-new">Nova</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Yamaha</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Zero KM</span>
+            <span class="spec">Financiamento</span>
+            <span class="spec">Entrada Fácil</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/HxGLFs9R/Captura-de-tela-2026-04-29-211145.jpg" alt="Moto 8">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-zero">0 KM</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Honda</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">Disponível</span>
+            <span class="spec">Aceita Troca</span>
+            <span class="spec">Financ.</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="moto-card reveal">
+        <div class="card-img">
+          <img src="https://i.postimg.cc/xCrdBT3W/Captura-de-tela-2026-04-29-211208.jpg" alt="Moto 9">
+          <div class="card-overlay"></div>
+          <span class="card-tag tag-hot">Destaque</span>
+        </div>
+        <div class="card-body">
+          <div class="card-marca">Yamaha</div>
+          <div class="card-model">Consulte<br>Disponível</div>
+          <div class="card-specs">
+            <span class="spec">0 KM</span>
+            <span class="spec">NF</span>
+            <span class="spec">Garantia</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Tenho interesse nesta moto do estoque." class="c-btn c-primary" target="_blank">Tenho Interesse</a>
+            <a href="tel:+5548985068056" class="c-btn c-outline">Ligar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:60px;" class="reveal">
+      <a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Gostaria de ver todo o estoque disponível." class="btn-blue" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2.5C6.529 2.5 2.5 6.529 2.5 11.5c0 1.727.476 3.344 1.303 4.727L2.5 21.5l5.369-1.278A8.966 8.966 0 0011.5 21.5c4.971 0 9-4.029 9-9s-4.029-9-9-9z"/></svg>
+        Ver Estoque Completo no WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<div class="marcas-section">
+  <div class="marcas-inner">
+    <div class="marcas-title reveal">
+      <p>Trabalhamos com as melhores</p>
+    </div>
+    <div class="marcas-grid">
+      <div class="marca-card reveal">
+        <div class="marca-name">HONDA</div>
+        <div class="marca-sub">Concessionária autorizada</div>
+        <div class="marca-desc">A marca mais vendida do Brasil. Qualidade, durabilidade e a melhor assistência técnica da categoria.</div>
+      </div>
+      <div class="marca-card reveal">
+        <div class="marca-name">YAMAHA</div>
+        <div class="marca-sub">Concessionária autorizada</div>
+        <div class="marca-desc">Tecnologia japonesa de ponta. Performance e design inovador para todos os estilos de pilotagem.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLIENTES -->
+<section id="clientes">
+  <div class="clientes-inner">
+    <p class="s-label reveal">Satisfação garantida</p>
+    <h2 class="s-title reveal">CLIENTES<br><em>FELIZES</em></h2>
+
+    <div class="slider-wrap reveal">
+      <div class="slider-track">
+        <!-- original set -->
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/6pdbCM1C/Captura-de-tela-2026-04-29-211502.jpg" alt="Cliente 1">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/52wK8skB/Captura-de-tela-2026-04-29-211523.jpg" alt="Cliente 2">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/8zhXLZnM/Captura-de-tela-2026-04-29-211552.jpg" alt="Cliente 3">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/6pdbCM1d/Captura-de-tela-2026-04-29-211613.jpg" alt="Cliente 4">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/RZcpwgbL/Captura-de-tela-2026-04-29-211636.jpg" alt="Cliente 5">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/L8zQjx0B/Captura-de-tela-2026-04-29-211703.jpg" alt="Cliente 6">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <!-- duplicate set for seamless loop -->
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/6pdbCM1C/Captura-de-tela-2026-04-29-211502.jpg" alt="Cliente 1">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/52wK8skB/Captura-de-tela-2026-04-29-211523.jpg" alt="Cliente 2">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/8zhXLZnM/Captura-de-tela-2026-04-29-211552.jpg" alt="Cliente 3">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/6pdbCM1d/Captura-de-tela-2026-04-29-211613.jpg" alt="Cliente 4">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/RZcpwgbL/Captura-de-tela-2026-04-29-211636.jpg" alt="Cliente 5">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+        <div class="cliente-card">
+          <img src="https://i.postimg.cc/L8zQjx0B/Captura-de-tela-2026-04-29-211703.jpg" alt="Cliente 6">
+          <div class="cliente-overlay"><span class="cliente-label">Cliente Satisfeito</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;" class="reveal">
+      <a href="https://www.instagram.com/marchimotos/" class="btn-ghost" target="_blank" style="display:inline-flex;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:18px;height:18px"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Ver mais no Instagram @marchimotos
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes">
+  <div class="aval-inner">
+    <div class="aval-top">
+      <div class="aval-score reveal">
+        <div class="score-num">5.0</div>
+        <div class="score-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="score-count">181 avaliações no Google</div>
+      </div>
+      <div class="aval-info reveal">
+        <h2>O QUE NOSSOS<br><em>CLIENTES DIZEM</em></h2>
+        <p>Com nota máxima no Google, somos referência em atendimento personalizado, honestidade e qualidade em São José/SC.</p>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-text">Atendimento sem igual, rapaziada gente boa demais. Loja top demais também!</p>
+        <div class="rev-author">Cliente Verificado</div>
+        <div class="rev-date">Google Reviews</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-text">Vendedor João, um excelente profissional, com atendimento nota dez!</p>
+        <div class="rev-author">Cliente Verificado</div>
+        <div class="rev-date">Google Reviews</div>
+      </div>
+      <div class="review-card reveal">
+        <div class="rev-stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="rev-text">Equipe atenciosa, preços competitivos e motos de alta qualidade. Recomendo!</p>
+        <div class="rev-author">Cliente Verificado</div>
+        <div class="rev-date">Google Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOJA -->
+<div class="loja-section" id="sobre">
+  <div class="loja-img-side">
+    <img src="https://i.postimg.cc/wBq2LgNT/Captura-de-tela-2026-04-29-210548.jpg" alt="Marchi Motos - Nossa Loja">
+    <div class="loja-img-overlay"></div>
+  </div>
+  <div class="loja-content-side">
+    <p class="s-label reveal">Nossa loja</p>
+    <h2 class="reveal">VENHA NOS<br><em>VISITAR</em></h2>
+    <p class="reveal">Especializada em motos zero km Honda e Yamaha em São José. Seu sonho da moto nova começa aqui!</p>
+    <div class="loja-list">
+      <div class="loja-item reveal">
+        <div class="loja-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>R. Pedro Bunn, 637 - Jardim Cidade de Florianópolis, São José - SC</span>
+      </div>
+      <div class="loja-item reveal">
+        <div class="loja-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <span>Seg-Sex: 08:30 às 18:00 · Sáb: 08:30 às 13:00</span>
+      </div>
+      <div class="loja-item reveal">
+        <div class="loja-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.09 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <span>(48) 98506-8056 — 90% do atendimento é online!</span>
+      </div>
+      <div class="loja-item reveal">
+        <div class="loja-item-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span>Nota 5.0 no Google com 181 avaliações verificadas</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <a href="https://maps.google.com/?q=R.+Pedro+Bunn,+637+São+José+SC" class="btn-blue" style="display:inline-flex;" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Como Chegar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="contato-inner">
+    <div class="contato-info">
+      <p class="s-label reveal">Fale conosco</p>
+      <h2 class="s-title reveal">ENTRE EM<br><em>CONTATO</em></h2>
+      <p class="reveal">Nossa equipe está pronta para te atender de forma rápida, personalizada e sem burocracia.</p>
+      <div class="contact-list">
+        <div class="contact-row reveal">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.09 2.18 2 2 0 012.08 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="contact-text">
+            <h4>Telefone / WhatsApp</h4>
+            <a href="tel:+5548985068056">(48) 98506-8056</a>
+          </div>
+        </div>
+        <div class="contact-row reveal">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-text">
+            <h4>Endereço</h4>
+            <a href="https://maps.google.com/?q=R.+Pedro+Bunn,+637+São+José+SC" target="_blank">R. Pedro Bunn, 637 · São José - SC</a>
+          </div>
+        </div>
+        <div class="contact-row reveal">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div class="contact-text">
+            <h4>Instagram</h4>
+            <a href="https://instagram.com/marchimotos/" target="_blank">@marchimotos</a>
+          </div>
+        </div>
+        <div class="contact-row reveal">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-text">
+            <h4>Horário</h4>
+            <p>Seg-Sex: 08:30–18:00 · Sáb: 08:30–13:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contato-form reveal">
+      <h3>FALE CONOSCO</h3>
+      <p>Preencha e entraremos em contato rapidamente</p>
+      <div class="form-row">
+        <div class="f-group">
+          <label>Nome</label>
+          <input type="text" id="nome" placeholder="Seu nome">
+        </div>
+        <div class="f-group">
+          <label>WhatsApp</label>
+          <input type="tel" id="tel" placeholder="(48) 99999-9999">
+        </div>
+      </div>
+      <div class="f-group">
+        <label>Interesse</label>
+        <select id="interesse">
+          <option value="">Selecione...</option>
+          <option>Quero uma moto 0km Honda</option>
+          <option>Quero uma moto 0km Yamaha</option>
+          <option>Quero financiar uma moto</option>
+          <option>Quero trocar minha moto</option>
+          <option>Quero vender minha moto</option>
+          <option>Outros</option>
+        </select>
+      </div>
+      <div class="f-group">
+        <label>Mensagem</label>
+        <textarea id="msg" rows="4" placeholder="Conte o que você está procurando..."></textarea>
+      </div>
+      <button class="form-submit" onclick="enviarWA()">
+        <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2.5C6.529 2.5 2.5 6.529 2.5 11.5c0 1.727.476 3.344 1.303 4.727L2.5 21.5l5.369-1.278A8.966 8.966 0 0011.5 21.5c4.971 0 9-4.029 9-9s-4.029-9-9-9z"/></svg>
+        Enviar pelo WhatsApp
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="f-brand">
+      <div class="f-brand-logo">
+        <img src="https://i.postimg.cc/vBGvMX0c/Gemini-Generated-Image-fpb34afpb34afpb3-removebg-preview.png" alt="Marchi Motos">
+        <div class="f-brand-name">MARCHI <span>MOTOS</span></div>
+      </div>
+      <p>Especialistas em Honda e Yamaha 0km em São José/SC. Seu sonho começa aqui!</p>
+    </div>
+    <div class="f-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#estoque">Estoque</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Serviços</h4>
+      <ul>
+        <li><a href="#contato">Honda 0KM</a></li>
+        <li><a href="#contato">Yamaha 0KM</a></li>
+        <li><a href="#contato">Financiamento 48x</a></li>
+        <li><a href="#contato">Aceita Troca</a></li>
+        <li><a href="#contato">Cartão 18x</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="tel:+5548985068056">(48) 98506-8056</a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=5548985068056" target="_blank">WhatsApp</a></li>
+        <li><a href="https://instagram.com/marchimotos/" target="_blank">@marchimotos</a></li>
+        <li><a href="https://www.facebook.com/vitor.marchi.3/" target="_blank">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Marchi Motos · R. Pedro Bunn, 637 · São José - SC · (48) 98506-8056</p>
+    <div class="f-socials">
+      <a href="https://instagram.com/marchimotos/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://www.facebook.com/vitor.marchi.3/" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5548985068056" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2.5C6.529 2.5 2.5 6.529 2.5 11.5c0 1.727.476 3.344 1.303 4.727L2.5 21.5l5.369-1.278A8.966 8.966 0 0011.5 21.5c4.971 0 9-4.029 9-9s-4.029-9-9-9z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOAT -->
+<a href="https://api.whatsapp.com/send?phone=5548985068056&text=Olá! Vim pelo site e gostaria de mais informações." class="wa-float" target="_blank">
+  <span class="wa-tip">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2.5C6.529 2.5 2.5 6.529 2.5 11.5c0 1.727.476 3.344 1.303 4.727L2.5 21.5l5.369-1.278A8.966 8.966 0 0011.5 21.5c4.971 0 9-4.029 9-9s-4.029-9-9-9z"/></svg>
+</a>
+
+<script>
+  // NAVBAR SCROLL
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
+
+  // MOBILE MENU
+  function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // REVEAL
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if(e.isIntersecting){
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FILTER PILLS
+  document.querySelectorAll('.cat-btn').forEach(b => {
+    b.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    });
+  });
+
+  // WA FORM
+  function enviarWA(){
+    const nome = document.getElementById('nome').value.trim();
+    const tel  = document.getElementById('tel').value.trim();
+    const int  = document.getElementById('interesse').value;
+    const msg  = document.getElementById('msg').value.trim();
+    if(!nome){ alert('Informe seu nome.'); return; }
+    let txt = `Olá! Meu nome é *${nome}*.\n`;
+    if(int) txt += `Interesse: *${int}*\n`;
+    if(tel) txt += `Meu WhatsApp: *${tel}*\n`;
+    if(msg) txt += `\nMensagem: ${msg}`;
+    window.open(`https://api.whatsapp.com/send?phone=5548985068056&text=${encodeURIComponent(txt)}`, '_blank');
+  }
+
+  // SMOOTH SCROLL
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if(t){ e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>
